@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Lifetime : MonoBehaviour
 {
     [SerializeField] private float lifetime = 10;
 
