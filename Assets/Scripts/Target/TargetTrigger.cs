@@ -9,6 +9,7 @@ public class TargetTrigger : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        ScoreCounter.SingletonScoreCounter.AddPoint();
         Instantiate(destroyEffectSystem).transform.position = transform.position;
         Destroy(gameObject);
     }
