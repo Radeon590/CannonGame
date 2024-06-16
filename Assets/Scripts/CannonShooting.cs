@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CannonShooting : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem particleSystem;
     [SerializeField] private Transform bulletSpawnPoint;
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Vector3 bulletForce;
     [SerializeField] private float force;
 
     // Update is called once per frame
@@ -19,6 +19,7 @@ public class CannonShooting : MonoBehaviour
             bullet.transform.rotation = bulletSpawnPoint.rotation;
             var rb = bullet.GetComponent<Rigidbody>();
             rb.AddForce(bullet.transform.forward * force);
+            particleSystem.Play();
         }
     }
 }
