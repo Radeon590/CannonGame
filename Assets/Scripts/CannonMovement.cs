@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cannon : MonoBehaviour
+public class CannonMovement : MonoBehaviour
 {
     [SerializeField] private Transform gun;
     [SerializeField] private Vector3 minBorder;
@@ -12,7 +12,6 @@ public class Cannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(GetNormalizedRotation(gun));
         if (Input.GetKey(KeyCode.A) && GetNormalizedRotation(transform).y > minBorder.y)
         {
             RotateCannon(Vector3.down);
