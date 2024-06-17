@@ -627,6 +627,37 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!1 &585755460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 585755461}
+  m_Layer: 0
+  m_Name: TargetsContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &585755461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585755460}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2143478589}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &593354720
 GameObject:
   m_ObjectHideFlags: 0
@@ -6714,6 +6745,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb63d87932e5194982d15a6e39e670b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxTargets: 20
+  targetsContainer: {fileID: 585755461}
   targetPrefabs:
   - {fileID: 2944615031840006070, guid: 720d6e12af8d82b4a9c6e987784ad112, type: 3}
   - {fileID: 4501554032039282314, guid: c4647976511fa234dbd79c4074e0ee1e, type: 3}
@@ -6737,6 +6770,7 @@ Transform:
   m_Children:
   - {fileID: 244755092}
   - {fileID: 56155603}
+  - {fileID: 585755461}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807

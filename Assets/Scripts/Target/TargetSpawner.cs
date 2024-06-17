@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TargetSpawner : MonoBehaviour
 {
+    [SerializeField] private int maxTargets = 20;
+    [SerializeField] private Transform targetsContainer;
     [SerializeField] private List<GameObject> targetPrefabs;
     [SerializeField] private float spawnRate = 1;
     [SerializeField] private Transform leftDownPoint;
@@ -15,13 +17,15 @@ public class TargetSpawner : MonoBehaviour
     void Update()
     {
         _timer += Time.deltaTime;
-        if (_timer > spawnRate)
+        if (_timer > spawnRate && targetsContainer.childCount < maxTargets)
         {
             int prefab = Random.Range(0, targetPrefabs.Count);
             float speed = Random.Range(speedLimits.x, speedLimits.y);
             Vector3 point1 = RandomizePoint();
             Vector3 point2 = RandomizePoint();
-            Instantiate(targetPrefabs[prefab]).GetComponent<TargetMovement>().Initialize(speed, point1, point2);
+            var newTarget = Instantiate(targetPrefabs[prefab]).GetComponent<TargetMovement>();
+            newTarget.Initialize(speed, point1, point2);
+            newTarget.transform.SetParent(targetsContainer);
             //
             _timer = 0;
         }
