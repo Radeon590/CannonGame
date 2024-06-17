@@ -10,6 +10,11 @@ public class Timer : MonoBehaviour
 
     private float _timer = 0;
 
+    private void Start()
+    {
+        timeText.text = "0:00";
+    }
+
     // Update is called once per frame
     void Update()
     {
