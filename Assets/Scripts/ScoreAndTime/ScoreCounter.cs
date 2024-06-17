@@ -22,7 +22,12 @@ public class ScoreCounter : MonoBehaviour
 
     public void AddPoint()
     {
-        _currentScore++;
+        AddPoints(1);
+    }
+
+    public void AddPoints(int points)
+    {
+        _currentScore += points;
         currentScoreText.text = $"{_currentScore}";
         if (_currentScore > PlayerPrefs.GetInt("score", 0))
         {
